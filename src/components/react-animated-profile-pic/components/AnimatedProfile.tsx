@@ -56,7 +56,7 @@ const AnimatedProfile: FC<Props> = ({ size }) => {
 		>
 			{positionedIcons}
 			<motion.image
-				href="profile-pic-no-bg.png"
+				href="/profile-pic-no-bg.png"
 				height={ICON_EDGE(size) * 13}
 				width={ICON_EDGE(size) * 13}
 				animate={{ scale: isHovered ? 1.1 : 1 }}
