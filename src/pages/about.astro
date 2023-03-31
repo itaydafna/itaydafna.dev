@@ -1,0 +1,30 @@
+---
+import PageLayout from "@/layouts/Base";
+import AnimatedProfile from "src/components/react-animated-profile-pic/components/AnimatedProfile";
+import { ProfilePicSize } from "src/components/react-animated-profile-pic/constants/profile-pic-dimensions.constants";
+import SocialList from "@/components/SocialList";
+
+const meta = {
+	title: "About",
+	description: "I'm a starter theme for Astro.build",
+};
+---
+
+<PageLayout meta={meta}>
+	<div class="space-y-6">
+		<h1 class="title">About</h1>
+		<p>
+			Hi, I’m Itay Dafna, a Tel Aviv-based software developer. This is where I blog about
+			interesting code-related things I've encountered in the wild and lived to tell.
+		</p>
+		<div class="flex justify-center">
+			<div class="hidden sm:inline">
+				<AnimatedProfile size={ProfilePicSize.LARGE} client:load />
+			</div>
+			<div class="visible sm:hidden">
+				<AnimatedProfile size={ProfilePicSize.SMALL} client:load />
+			</div>
+		</div>
+	</div>
+	<SocialList />
+</PageLayout>
