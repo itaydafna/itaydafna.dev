@@ -64,7 +64,7 @@ public class WordCountController {
 
 The `wordcount` endpoint receives a text file and then passes its contents as well as an initialized `SparkSession` to the `WordCountSparkJob` module which is later ran by the executors. You can optionally tell Spark to terminate these executors once the job is done by calling `sparkSession.close()` (currently commented out).
 
-The [`SparkService`](https://github.com/itaydafna/spring-boot-spark-on-minikube/blob/main/word-count-driver/src/main/java/org/example/service/SparkService.java) in the Spring-Boot driver is responsible for configuring and initializing the `SparkContext`:
+The `SparkService` [class](https://github.com/itaydafna/spring-boot-spark-on-minikube/blob/main/word-count-driver/src/main/java/org/example/service/SparkService.java) in the Spring-Boot driver is responsible for configuring and initializing the `SparkContext`:
 
 ```java
 @Service
