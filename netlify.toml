@@ -7,3 +7,8 @@
   to = "/blog"
   status = 302
   force = true
+
+  from = "/itaydafna-dev.netlify.app/*"
+  to = "https://www.itaydafna.dev/:splat"
+  status = 301
+  force = true
