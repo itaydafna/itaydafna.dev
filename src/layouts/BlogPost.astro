@@ -66,7 +66,7 @@ const { headings } = await post.render();
 </script>
 
 <BaseLayout meta={{ title, description, articleDate, ogImage: socialImage }}>
-	<div class="flex items-start gap-x-10">
+	<div class="items-start gap-x-10 sm:flex">
 		{
 			!!headings.length && (
 				<aside class="sticky top-20 order-2 -mr-32 hidden basis-64 lg:block">
@@ -75,7 +75,7 @@ const { headings } = await post.render();
 					</h2>
 					<ul class="mt-4 text-xs">
 						{headings.map(({ depth, slug, text }) => (
-							<li class="line-clamp-2 hover:text-accent">
+							<li class="hover:text-accent line-clamp-2">
 								<a
 									class={`block ${depth <= 2 ? "mt-3" : "mt-2 pl-3 text-[0.6875rem]"}`}
 									href={`#${slug}`}
