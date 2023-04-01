@@ -1,6 +1,6 @@
 ---
 title: "Running a Spring Boot Spark app on Minikube"
-publishDate: "01 March 2023"
+publishDate: "02 April 2023"
 description: "A step by step tutorial on how to use Spring Boot to run a Spark application on a local Minikube K8S cluster."
 tags: ["Spark", "Kubernetes", "Spring", "Minikube"]
 ---
