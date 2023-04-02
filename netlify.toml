@@ -9,7 +9,4 @@
   force = true
 
 [[redirects]]
-  from = "/itaydafna-dev.netlify.app/*"
-  to = "https://www.itaydafna.dev/:splat"
-  status = 301
-  force = true
+  https://itaydafna-dev.netlify.app/* https://www.itaydafna.dev/:splat 302!
