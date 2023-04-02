@@ -343,7 +343,7 @@ Now that port forwarding has been established we can call our endpoint to send i
 
 Here I'm using Postman to send my endpoint a text file with the lyrics of Leonard Cohen's Hallelujah:
 
-![hallelujah-postman.png](/src/assets/hallelujah-postman.png)
+![hallelujah-postman.png](/hallelujah-postman.png)
 
 As you can see in the results, the endpoint returns the expected output.
 
