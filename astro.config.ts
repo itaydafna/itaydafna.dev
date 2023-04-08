@@ -6,6 +6,7 @@ import prefetch from "@astrojs/prefetch";
 import image from "@astrojs/image";
 import rehypeExternalLinks from "rehype-external-links";
 import svgr from "vite-plugin-svgr";
+import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 import react from "@astrojs/react";
@@ -16,6 +17,12 @@ export default defineConfig({
 	integrations: [
 		mdx({
 			extendMarkdownConfig: true,
+		}),
+		partytown({
+			// Adds dataLayer.push as a forwarding-event.
+			config: {
+				forward: ["dataLayer.push"],
+			},
 		}),
 		tailwind({
 			config: {
