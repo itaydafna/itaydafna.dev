@@ -1,6 +1,7 @@
 ---
 import { getFormattedDate } from "@/utils";
 import type { CollectionEntry } from "astro:content";
+import getReadingTime from "reading-time";
 
 interface Props {
 	content: CollectionEntry<"post">;
@@ -10,6 +11,7 @@ const { content } = Astro.props;
 
 const datetime = content.data.publishDate.toISOString();
 const postDate = getFormattedDate(content.data.publishDate);
+const minRead = getReadingTime(content.body);
 ---
 
 <h1 class="title mb-3 sm:mb-1">{content.data.title}</h1>
@@ -46,7 +48,27 @@ const postDate = getFormattedDate(content.data.publishDate);
 					{i < content.data.tags.length - 1 && ", "}
 				</>
 			))}
+			<p class="mt-3 flex font-medium">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="icon icon-tabler icon-tabler-clock"
+					width="20"
+					height="20"
+					viewBox="0 0 24 24"
+					stroke-width="1.5"
+					stroke="#2c3e50"
+					fill="none"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				>
+					<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+					<circle cx="12" cy="12" r="9" />
+					<polyline points="12 7 12 12 15 15" />
+				</svg>{" "}
+				<span class="ml-1">{minRead.text}</span>
+			</p>
 		</div>
 	)
 }
-<p class="mt-8 font-semibold">{content.data.description}</p>
+<!-- <p>{content.data}</p> -->
+<p class="mt-8 font-medium">{content.data.description}</p>
