@@ -7,9 +7,9 @@ import image from "@astrojs/image";
 import rehypeExternalLinks from "rehype-external-links";
 import svgr from "vite-plugin-svgr";
 import partytown from "@astrojs/partytown";
+import react from "@astrojs/react";
 
 // https://astro.build/config
-import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
