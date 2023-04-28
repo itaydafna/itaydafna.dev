@@ -43,7 +43,7 @@ import BaseLayout from "./Base.astro";
 
 ```
 
-## The implementation
+## The solution implementation
 
 And indeed, adding these few lines to the script tag did the trick: 
 
@@ -71,11 +71,12 @@ const anchorHeadings = document.querySelectorAll("h2, h3, h4, h5, h6");
 			anchor.className = "group relative cursor-pointer";
 			anchor.href = `#${heading.id}`;
 			heading.parentNode!.insertBefore(anchor, heading);
-			const linkIcon = document.createElement("div");
-			linkIcon.className = "hidden group-hover:block";
+			
+			const linkIconWrapper = document.createElement("div");
+			linkIconWrapper.className = "hidden group-hover:block";
 
-			linkIcon.innerHTML = linkSvg;
-			anchor.appendChild(linkIcon);
+			linkIconWrapper.innerHTML = linkSvg;
+			anchor.appendChild(linkIconWrapper);
 			anchor.appendChild(heading);
 		});
 ```
@@ -90,4 +91,6 @@ const anchorHeadings = document.querySelectorAll("h2, h3, h4, h5, h6");
 
 Notice I'm not selecting `h1` - that's because I didn't want my main blog-post title to be an linkable anchor link.
 
-Next, I'm iterating over the selected heading using `forEach`. For each heading I'm using 
+Next, I'm iterating over the selected heading using `forEach`. For each heading, I'm using the `document` API to wrap it with an anchor tag, linking to the heading. I'm also creating a wrapper for the link svg icon and injecting the icon markup into it using the `innerHTML` property. 
+Notice that I'm adding Tailwind classes to the elements I'm creating to set up the layout and behavior of my headings. For example, in order to show the link-icons only upon hovering the heading I added the following classes to the `linkIconWrapper`: `hidden group-hover:block`. Of course, this is just a personal preference and you could use any other CSS solution in order to achieve the same result.
+
