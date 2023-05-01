@@ -23,11 +23,12 @@ export function applyAnchorHeadings() {
 			anchor.className = "group relative cursor-pointer";
 			anchor.href = `#${heading.id}`;
 			heading.parentNode!.insertBefore(anchor, heading);
-			const linkIcon = document.createElement("div");
-			linkIcon.className = "hidden group-hover:block";
 
-			linkIcon.innerHTML = linkSvg;
-			anchor.appendChild(linkIcon);
+			const linkIconWrapper = document.createElement("div");
+			linkIconWrapper.className = "hidden group-hover:block";
+
+			linkIconWrapper.innerHTML = linkSvg;
+			anchor.appendChild(linkIconWrapper);
 			anchor.appendChild(heading);
 		});
 }
