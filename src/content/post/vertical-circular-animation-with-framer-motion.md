@@ -54,3 +54,35 @@ Basically, all it required was animating the `y` property of the `rect` from the
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
+
+Getting the items to horizontally "jump" between lanes once they reach the top of the container was a bit trickier. To better explain how I got this to work, I removed the vertical animation from the example and kept only the transition on the `x` axis:
+
+```jsx
+import { motion } from "framer-motion";
+
+const VerticalCircularAnimation = () => {
+	return (
+		<svg height={300} width={300} style={{ border: "1px solid black" }}>
+			<motion.rect
+				height={100}
+				width={100}
+				fill="green"
+				animate={{
+					x: [0, 0, 100, 100, 200, 200],
+				}}
+				transition={{
+					x: {
+						ease: "linear",
+						repeat: Infinity,
+						repeatType: "loop",
+						duration: 2 * 3,
+						times: [0, 1 / 3, 1 / 3, 2 / 3, 2 / 3, 1],
+					},
+				}}
+			/>
+		</svg>
+	);
+};
+
+export default VerticalCircularAnimation;
+```
