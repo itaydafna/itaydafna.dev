@@ -1,6 +1,6 @@
 ---
 title: "Vertical Circular Animation using Framer Motion"
-publishDate: "02 April 2023"
+publishDate: "01 June 2023"
 description: "Implementing an infinite transition of SVG elements in vertical container lanes using React and Framer Motion"
 tags: ["React", "Framer-Motion", "SVG", "Animation"]
 ---
